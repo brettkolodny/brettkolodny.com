@@ -1,3 +1,7 @@
+* {
+  background-color: papayawhip;
+}
+
 #resume {
   position: fixed;
   top: 50%;
@@ -10,4 +14,21 @@
   font-variant: normal;
   font-weight: 700;
   line-height: 26.4px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#resume:visited {
+  color: black;
+}
+
+#resume:link {
+  color: black;
+}
+
+#resume:hover {
+  color: papayawhip;
+  background-color: black;
 }
