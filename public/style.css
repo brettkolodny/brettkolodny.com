@@ -1,0 +1,62 @@
+@font-face {
+    /*font-family: 'kenney_boldregular';*/
+    font-family: 'Kenney Bold';
+    src: url('/fonts/kenney_bold-webfont.woff2') format('woff2'),
+    url('/fonts/kenney_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    background-image: url("../static/background.svg");
+    background-repeat: repeat-x;
+    background-size: auto 120%;
+    background-color: #1ebc9e;
+}
+
+#banner {
+    margin: 0 auto;
+    display: block;
+    margin-top: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-image: url("../static/banner_full.svg");
+    background-size: 100% 100%;
+}
+
+#banner-text {
+    display: block;
+    text-align: center;
+    font-size: 175%;
+    padding-bottom: 5%;
+    font-family: 'Kenney Bold';
+}
+
+.link-div {
+    display: block;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding: 5% 5% 5% 5%;
+    background-image: url("../static/link.svg");
+    background-size: 100% 100%;
+}
+
+.link-div img {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
+
+.link {
+    display: flex;
+    margin: 0 auto;
+}
+
+#link-row {
+    margin-bottom: 20%;
+}
+
+#background {
+ display: inline;
+}

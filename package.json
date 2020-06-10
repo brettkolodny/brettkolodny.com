@@ -1,22 +1,21 @@
 {
-  "name": "my-site",
+  "name": "brettkolodny",
   "version": "0.1.0",
-  "description": "My website",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brettkolodny/My-Site.git"
-  },
-  "author": "Brett Kolodny",
+  "keywords": [
+    "BuckleScript"
+  ],
+  "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/brettkolodny/My-Site/issues"
+  "devDependencies": {
+    "bs-platform": "^7.2.1"
   },
-  "homepage": "https://github.com/brettkolodny/My-Site#readme",
   "dependencies": {
-    "pdfjs-dist": "^2.0.943"
+    "react-bootstrap": "^1.0.0-beta.17",
+    "reason-react": "^0.7.0"
   }
 }
