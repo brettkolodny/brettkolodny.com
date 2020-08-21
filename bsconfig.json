@@ -1,24 +1,21 @@
 {
   "name": "brettkolodny",
-  "reason": { "react-jsx": 3 },
-  "bsc-flags": ["-bs-super-errors"],
-  "version": "0.1.0",
+  "reason": {
+    "react-jsx": 3
+  },
   "sources": {
     "dir" : "src",
     "subdirs" : true
   },
-  "package-specs": {
-    "module": "es6",
+  "bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
+  "package-specs": [{
+    "module": "commonjs",
     "in-source": true
-  },
+  }],
   "suffix": ".bs.js",
+  "namespace": true,
   "bs-dependencies": [
     "reason-react"
   ],
-  "warnings": {
-    "error" : "+101"
-  },
-  "namespace": true,
-  "ppx-flags": [],
   "refmt": 3
 }
