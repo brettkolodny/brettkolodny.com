@@ -2,6 +2,7 @@
 [@bs.val] external document: Js.t({..}) = "document";
 [@bs.val] external window: Js.t({..}) = "window";
 [@bs.set] external setTransformOrigin: (Dom.cssStyleDeclaration, string) => unit = "transform-origin";
+[@bs.set] external setBGColor: (Dom.cssStyleDeclaration, string) => unit = "background-color";
 
 let makeStars = (numStars, element) => {
     /*
@@ -9,13 +10,13 @@ let makeStars = (numStars, element) => {
     load the page.
     */
     Random.self_init();
-    
+    let starColors = [|"#F6A614", "#fefde2", "#E85581"|];
     let createStar = () => {
         /*
         Get randomized values for the star's initial position, size, transform, and 
         animation duration/delay and then format them into the proper strings.
         */
-        let top = ((Random.int(150) - 50) -> string_of_int) ++ "%";
+        let top = ((Random.int(125) - 25) -> string_of_int) ++ "%";
         let left = ((Random.int(150) - 50) -> string_of_int) ++ "%";
 
         let size = ((Random.int(9) + 10) -> string_of_int) ++ "px";
@@ -26,6 +27,8 @@ let makeStars = (numStars, element) => {
 
         let animationDuration = ((Random.int(15) + 10) -> string_of_int) ++ "s";
         let animationDelay = ((Random.int(8) * -1) -> string_of_int) ++ "s";
+
+        let color = Array.length(starColors) -> Random.int |> Array.get(starColors);
 
         /*
         Create the star and set the values created above.
@@ -42,6 +45,8 @@ let makeStars = (numStars, element) => {
 
         setTransformOrigin(star##style, transformOrigin);
         star##style##animation #= ("orbit " ++ animationDuration ++ " linear " ++ animationDelay ++ " infinite");
+
+        setBGColor(star##style, color);
 
         element##appendChild(star);
     };
