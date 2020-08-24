@@ -129,6 +129,10 @@ body {
     background-color: #e85581;
 }
 
+.project-link {
+    text-decoration: none;
+}
+
 .project-image {
     width: inherit;
     height: 200px;
@@ -189,7 +193,6 @@ body {
 }
 
 .star {
-    /* filter: blur(6.2px); */
     position: absolute;
     background-color: #fefde2;
     border-radius: 100%;
