@@ -1,16 +1,45 @@
+[@bs.val] external document: Dom.document = "document";
 [@bs.val] external setTimeout: (unit => unit, int) => unit = "setTimeout";
-[@bs.val] external document: Js.t({..}) = "document";
-[@bs.val] external window: Js.t({..}) = "window";
-[@bs.set] external setTransformOrigin: (Dom.cssStyleDeclaration, string) => unit = "transform-origin";
-[@bs.set] external setBGColor: (Dom.cssStyleDeclaration, string) => unit = "background-color";
+[@bs.val] external addEventListener: (string, (Js.t({..}) => unit)) => unit = "addEventListener";
+
+type styleAttribute = {
+    name: string,
+    value: string,
+}
+
+let createStyleString = attributes => {
+    let formatAttribute = (attr) => {
+        attr.name ++ ":" ++ attr.value ++ ";"
+    };
+
+    let rec create = (attr, final) => {
+        switch attr {
+        | [hd, ... tl] => create(tl, final ++ formatAttribute(hd))
+        | [] => final
+        };
+    };
+
+    create(attributes, "")
+}
 
 let makeStars = (numStars, element) => {
-    /*
-    Initialize the randomization so that the values are not the same every time you
-    load the page.
-    */
+    let blur = (e) => {
+        let pos = e##target##scrollingElement##scrollTop;
+        let max = e##target##scrollingElement##scrollHeight;
+
+        let blurAmount = pos /. max *. 10.0;
+
+        if (blurAmount < 6.0) {
+            element##style #= ("filter: " ++ "blur(" ++ Js.Float.toString(blurAmount) ++ "px)");
+        } else {
+            element##style #= ("filter: blur(6px)");
+        };
+    };
+
+    addEventListener("scroll", blur);
+
     Random.self_init();
-    let starColors = [|"#F6A614", "#fefde2", "#E85581"|];
+    let starColors = [|"#f6a614", "#fefde2", "#e85581"|];
     let createStar = () => {
         /*
         Get randomized values for the star's initial position, size, transform, and 
@@ -31,22 +60,28 @@ let makeStars = (numStars, element) => {
         let color = Array.length(starColors) -> Random.int |> Array.get(starColors);
 
         /*
-        Create the star and set the values created above.
+        Turn all of the style attributes into a single style string
+        to assign to the star
         */
-        let star = document##createElement("div");
+        let attributes = [
+            {name: "top", value: top},
+            {name: "left", value: top},
+            {name: "left", value: left},
+            {name: "width", value: size},
+            {name: "height", value: size},
+            {name: "transform-origin", value: transformOrigin},
+            {name: "animation", value: "orbit " ++ animationDuration ++ " linear " ++ animationDelay ++ " infinite"},
+            {name: "background-color", value: color}
+        ]
 
-        star##className #= "star";
+        let styleString = createStyleString(attributes);
 
-        star##style##top #= top;
-        star##style##left #= left;
-
-        star##style##height #= size;
-        star##style##width #= size;
-
-        setTransformOrigin(star##style, transformOrigin);
-        star##style##animation #= ("orbit " ++ animationDuration ++ " linear " ++ animationDelay ++ " infinite");
-
-        setBGColor(star##style, color);
+        /*
+        Create the star and set the style string created above.
+        */
+        let star = Webapi.Dom.Document.createElement("div", document);
+        Webapi.Dom.Element.setClassName(star, "star");
+        Webapi.Dom.Element.setAttribute("style", styleString, star);
 
         element##appendChild(star);
     };
