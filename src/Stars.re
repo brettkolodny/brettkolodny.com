@@ -7,6 +7,16 @@ let makeStars = (numStars, element) => {
 
     let starColors = [|"#f6a614", "#fefde2", "#e85581"|];
 
+    let blurAmonut = 
+    switch (Webapi.Dom.Document.getElementsByTagName("html", document) |> Webapi.Dom.HtmlCollection.item(0)) {
+    | Some(e) => Js.Float.toString(Effects.getBlurAmount(e)) ++ "px"
+    | None => "0px"
+    };
+
+    let elementStyle = getStyle(element);
+    Webapi.Dom.CssStyleDeclaration.setProperty("--blur", blurAmonut, "", elementStyle);
+
+
     let createStar = () => {
         /*
         Get randomized values for the star's initial position, size, transform, and 
@@ -27,12 +37,6 @@ let makeStars = (numStars, element) => {
 
         let color = Array.length(starColors) -> Random.int |> Array.get(starColors);
 
-        let blurAmonut = 
-            switch (Webapi.Dom.Document.getElementsByTagName("html", document) |> Webapi.Dom.HtmlCollection.item(0)) {
-            | Some(e) => "blur(" ++ Js.Float.toString(Effects.getBlurAmount(e)) ++ "px)"
-            | None => "blur(0px)"
-            };
-
         /*
         Create the star and set the style string created above.
         */
@@ -50,8 +54,6 @@ let makeStars = (numStars, element) => {
         Webapi.Dom.CssStyleDeclaration.setProperty("animation", animation, "", style);
 
         Webapi.Dom.CssStyleDeclaration.setProperty("background-color", color, "", style);
-
-        Webapi.Dom.CssStyleDeclaration.setProperty("filter", blurAmonut, "", style);
 
         Webapi.Dom.CssStyleDeclaration.setProperty("opacity", "50%", "", style);
 

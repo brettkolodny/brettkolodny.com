@@ -10,34 +10,18 @@ let getBlurAmount = element => {
 
 let blur = element => {
     let homeDiv = getElementById("home", document);
-    let stars = Webapi.Dom.Document.getElementsByClassName("star", document);
+    let stars = getElementById("stars", document);
 
-    let blurAmount = getBlurAmount(element);
+    let blurAmount = Js.Float.toString(getBlurAmount(element)) ++ "px";
 
-    let homeStyle = getStyle(homeDiv);
-
-    if (blurAmount > 1.0) {
-        Webapi.Dom.CssStyleDeclaration.setProperty("z-index", "-1", "", homeStyle);
-    } else {
-        Webapi.Dom.CssStyleDeclaration.setProperty("z-index", "1", "", homeStyle);
-    };
-
-    let propertyValue = "blur(" ++ Js.Float.toString(blurAmount) ++ "px)";
+    let propertyValue = "blur(" ++ blurAmount ++ ")";
 
     let homeStyle = getStyle(homeDiv);
     Webapi.Dom.CssStyleDeclaration.setProperty("filter", propertyValue, "", homeStyle);
 
-    for (i in 0 to Webapi.Dom.HtmlCollection.length(stars) - 1) {
-        let star = Webapi.Dom.HtmlCollection.item(i, stars);
+    let starsStyle = getStyle(stars);
+    Webapi.Dom.CssStyleDeclaration.setProperty("--blur", blurAmount, "", starsStyle);
 
-        switch star {
-        | Some(s) => {
-        let style = getStyle(s);
-        Webapi.Dom.CssStyleDeclaration.setProperty("filter", propertyValue, "", style);
-        }
-        | None => Js.log(i); ();
-        }
-    };
 };
 
 let getScrollPercent = element => {
@@ -59,5 +43,16 @@ let hideHome = element => {
 
     let homeStyle = getStyle(homeDiv);
 
-    Webapi.Dom.CssStyleDeclaration.setProperty("display", display, "", homeStyle);
+    let currentDisplay = Webapi.Dom.CssStyleDeclaration.getPropertyValue("display", homeStyle);
+    let currentZIndex = Webapi.Dom.CssStyleDeclaration.getPropertyValue("z-index", homeStyle);
+
+    if (scrollPercent > 10.0 && currentZIndex != "-1") {
+        Webapi.Dom.CssStyleDeclaration.setProperty("z-index", "-1", "", homeStyle);
+    } else if (scrollPercent <= 10.0 && currentZIndex != "1") {
+        Webapi.Dom.CssStyleDeclaration.setProperty("z-index", "1", "", homeStyle);
+    };
+
+    if (display != currentDisplay) {
+        Webapi.Dom.CssStyleDeclaration.setProperty("display", display, "", homeStyle);
+    };
 };
