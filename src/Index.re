@@ -15,7 +15,7 @@ ReactDOMRe.render(
           <div id="link-buttons">
             <LinkButton svgPath="assets/svg/github.svg" linkLoc="https://www.github.com/brettkolodny" alt="GitHub" />
             <LinkButton svgPath="assets/svg/code.svg" linkLoc="#portfolio" alt="Portfolio" />
-            <LinkButton svgPath="/assets/svg/linkedin.svg" linkLoc="https://www.linkedin.com/in/brett-kolodny" alt="linkedin"/>
+            <LinkButton svgPath="assets/svg/linkedin.svg" linkLoc="https://www.linkedin.com/in/brett-kolodny" alt="linkedin"/>
           </div>
         </div>
       </div>
