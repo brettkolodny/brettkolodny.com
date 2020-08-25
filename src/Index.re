@@ -7,6 +7,7 @@
 let githubSvg = Utility.loadImage("../assets/svg/github.svg");
 let codeSvg = Utility.loadImage("../assets/svg/code.svg");
 let linkedinSvg = Utility.loadImage("../assets/svg/linkedin.svg");
+let downSvg = Utility.loadImage("../assets/svg/down-arrow.svg");
 
 let root = getElementById("root", document);
 ReactDOMRe.render(
@@ -21,6 +22,7 @@ ReactDOMRe.render(
             <LinkButton svgPath=codeSvg linkLoc="#portfolio" alt="Portfolio" />
             <LinkButton svgPath=linkedinSvg linkLoc="https://www.linkedin.com/in/brett-kolodny" alt="linkedin"/>
           </div>
+          <LinkButton svgPath=downSvg linkLoc="#portfolio" alt="Down" />
         </div>
       </div>
       //<div id="portfolio-seperator"></div>
