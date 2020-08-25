@@ -27,6 +27,12 @@ let makeStars = (numStars, element) => {
 
         let color = Array.length(starColors) -> Random.int |> Array.get(starColors);
 
+        let blurAmonut = 
+            switch (Webapi.Dom.Document.getElementsByTagName("html", document) |> Webapi.Dom.HtmlCollection.item(0)) {
+            | Some(e) => "blur(" ++ Js.Float.toString(Effects.getBlurAmount(e)) ++ "px)"
+            | None => "blur(0px)"
+            };
+
         /*
         Create the star and set the style string created above.
         */
@@ -44,6 +50,8 @@ let makeStars = (numStars, element) => {
         Webapi.Dom.CssStyleDeclaration.setProperty("animation", animation, "", style);
 
         Webapi.Dom.CssStyleDeclaration.setProperty("background-color", color, "", style);
+
+        Webapi.Dom.CssStyleDeclaration.setProperty("filter", blurAmonut, "", style);
 
         Webapi.Dom.Element.appendChild(star, element);
     };

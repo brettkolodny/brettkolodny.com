@@ -15,7 +15,7 @@ ReactDOMRe.render(
           <div id="link-buttons">
             <LinkButton svgPath="assets/svg/github.svg" linkLoc="https://www.github.com/brettkolodny" alt="GitHub" />
             <LinkButton svgPath="assets/svg/code.svg" linkLoc="#portfolio" alt="Portfolio" />
-            <LinkButton svgPath="assets/svg/person.svg" linkLoc="/assets/Brett\ Kolodny\ -\ Resume.pdf" alt="Resume" />
+            <LinkButton svgPath="/assets/svg/linkedin.svg" linkLoc="https://www.linkedin.com/in/brett-kolodny" alt="linkedin"/>
           </div>
         </div>
       </div>
@@ -29,30 +29,15 @@ ReactDOMRe.render(
 
 Stars.makeStars(200, getElementById("stars", document));
 
-let homeDiv = getElementById("home", document);
-let stars = Webapi.Dom.Document.getElementsByClassName("star", document);
-
-let blur = (e) => {
-  let pos = e -> Webapi.Dom.Event.target -> scrollingElement -> Webapi.Dom.Element.scrollTop;
-  let maxHeight = e -> Webapi.Dom.Event.target -> scrollingElement -> Webapi.Dom.Element.scrollHeight -> float_of_int;
-  let blurAmount = min(pos /. maxHeight *. 10.0, 6.0) -> Js.Float.toString;
-
-  let propertyValue = "blur(" ++ blurAmount ++ "px)";
-
-  let homeStyle = getStyle(homeDiv);
-  Webapi.Dom.CssStyleDeclaration.setProperty("filter", propertyValue, "", homeStyle);
-
-  for (i in 0 to Webapi.Dom.HtmlCollection.length(stars) - 1) {
-    let star = Webapi.Dom.HtmlCollection.item(i, stars);
-
-    switch star {
-    | Some(s) => {
-      let style = getStyle(s);
-      Webapi.Dom.CssStyleDeclaration.setProperty("filter", propertyValue, "", style);
-    }
-    | None => Js.log(i); ();
-    }
-  };
+let blurEvent = e => {
+  let scrollElement = e -> Webapi.Dom.Event.target -> scrollingElement;
+  Effects.blur(scrollElement);
 };
 
-addEventListener("scroll", blur);
+let hideHomeEvent = e => {
+  let scrollElement = e -> Webapi.Dom.Event.target -> scrollingElement;
+  Effects.hideHome(scrollElement);
+}
+
+addEventListener("scroll", blurEvent);
+addEventListener("scroll", hideHomeEvent);

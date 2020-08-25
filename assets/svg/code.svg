@@ -1,1 +1,134 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   height="492.30801"
+   width="512"
+   sodipodi:docname="code.svg"
+   xml:space="preserve"
+   viewBox="0 0 512 492.30801"
+   y="0px"
+   x="0px"
+   id="Capa_1"
+   version="1.1"><metadata
+   id="metadata43"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs41" /><sodipodi:namedview
+   inkscape:current-layer="Capa_1"
+   inkscape:window-maximized="1"
+   inkscape:window-y="27"
+   inkscape:window-x="0"
+   inkscape:cy="166.61782"
+   inkscape:cx="113.49115"
+   inkscape:zoom="0.859375"
+   showgrid="false"
+   id="namedview39"
+   inkscape:window-height="1016"
+   inkscape:window-width="1920"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0"
+   guidetolerance="10"
+   gridtolerance="10"
+   objecttolerance="10"
+   borderopacity="1"
+   bordercolor="#666666"
+   pagecolor="#ffffff" />
+<polygon
+   transform="translate(0,-9.846)"
+   id="polygon2"
+   points="173.095,255.606 124.849,207.458 152.714,179.594 228.726,255.606 152.714,331.717 124.849,303.852 "
+   style="fill:#ffffff" />
+<path
+   id="path4"
+   d="M 0,0 V 492.308 H 512 V 0 Z M 472.615,39.385 V 78.77 H 39.385 V 39.385 Z M 39.385,452.923 V 118.154 h 433.231 v 334.769 z"
+   style="fill:#ffffff" />
+<rect
+   id="rect6"
+   height="39.384998"
+   width="265.84601"
+   style="fill:#ffffff"
+   y="364.30798"
+   x="118.154" />
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g8">
+</g>
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g10">
+</g>
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g12">
+</g>
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g14">
+</g>
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g16">
+</g>
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g18">
+</g>
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g20">
+</g>
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g22">
+</g>
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g24">
+</g>
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g26">
+</g>
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g28">
+</g>
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g30">
+</g>
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g32">
+</g>
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g34">
+</g>
+<g
+   style="fill:#ffffff"
+   transform="translate(0,-9.846)"
+   id="g36">
+</g>
+</svg>
