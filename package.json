@@ -24,6 +24,7 @@
   "devDependencies": {
     "bs-platform": "^8.0.3",
     "cssnano": "^4.1.10",
-    "moduleserve": "^0.9.0"
+    "moduleserve": "^0.9.0",
+    "parcel-bundler": "^1.12.4"
   }
 }

@@ -4,6 +4,10 @@
 [@bs.get] external getStyle: Dom.element => Dom.cssStyleDeclaration = "style";
 [@bs.get] external scrollingElement: Dom.eventTarget => Dom.element = "scrollingElement";
 
+let githubSvg = Utility.loadImage("../assets/svg/github.svg");
+let codeSvg = Utility.loadImage("../assets/svg/code.svg");
+let linkedinSvg = Utility.loadImage("../assets/svg/linkedin.svg");
+
 let root = getElementById("root", document);
 ReactDOMRe.render(
   <div>
@@ -13,9 +17,9 @@ ReactDOMRe.render(
         <div id="home">
           <h1 id="title">{ReasonReact.string("Brett Kolodny")}</h1>
           <div id="link-buttons">
-            <LinkButton svgPath="assets/svg/github.svg" linkLoc="https://www.github.com/brettkolodny" alt="GitHub" />
-            <LinkButton svgPath="assets/svg/code.svg" linkLoc="#portfolio" alt="Portfolio" />
-            <LinkButton svgPath="assets/svg/linkedin.svg" linkLoc="https://www.linkedin.com/in/brett-kolodny" alt="linkedin"/>
+            <LinkButton svgPath=githubSvg linkLoc="https://www.github.com/brettkolodny" alt="GitHub" />
+            <LinkButton svgPath=codeSvg linkLoc="#portfolio" alt="Portfolio" />
+            <LinkButton svgPath=linkedinSvg linkLoc="https://www.linkedin.com/in/brett-kolodny" alt="linkedin"/>
           </div>
         </div>
       </div>

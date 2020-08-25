@@ -53,6 +53,8 @@ let makeStars = (numStars, element) => {
 
         Webapi.Dom.CssStyleDeclaration.setProperty("filter", blurAmonut, "", style);
 
+        Webapi.Dom.CssStyleDeclaration.setProperty("opacity", "50%", "", style);
+
         Webapi.Dom.Element.appendChild(star, element);
     };
 

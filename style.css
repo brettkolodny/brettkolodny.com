@@ -1,6 +1,6 @@
 @font-face {
     font-family: "paralucent";
-    src: url("assets/Paralucent W00 Medium.woff2") format('woff');
+    src: url("./assets/Paralucent W00 Medium.woff2") format('woff');
 }
 
 @keyframes orbit {
@@ -216,5 +216,4 @@ body {
     position: absolute;
     background-color: #fefde2;
     border-radius: 100%;
-    opacity: 50%;
 }
