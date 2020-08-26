@@ -17,21 +17,6 @@ body {
     margin: 0;
 }
 
-#content {
-    display: flex;
-    flex-direction: column;
-}
-
-#home {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    z-index: 1;
-    backface-visibility: hidden;
-}
-
 #top-bar a {
     text-decoration: none;
 }
@@ -55,6 +40,21 @@ body {
     left: 52px;
     top: 14px;
     z-index: 2;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+}
+
+#home {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+    backface-visibility: hidden;
 }
 
 #home > .link-button {
@@ -87,6 +87,21 @@ body {
     width: 120px;
     height: 120px;
     margin: 60px;
+}
+
+#down {
+    margin-top: 80vh;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    z-index: -1;
+}
+
+#down > img {
+    width: 120px;
+    height: 120px;
 }
 
 #portfolio-seperator {

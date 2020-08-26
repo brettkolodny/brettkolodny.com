@@ -22,8 +22,10 @@ ReactDOMRe.render(
             <LinkButton svgPath=codeSvg linkLoc="#portfolio" alt="Portfolio" />
             <LinkButton svgPath=linkedinSvg linkLoc="https://www.linkedin.com/in/brett-kolodny" alt="linkedin"/>
           </div>
-          <LinkButton svgPath=downSvg linkLoc="#portfolio" alt="Down" />
         </div>
+        <div id="down">
+            <img src=downSvg alt="Down" />
+          </div>
       </div>
       //<div id="portfolio-seperator"></div>
       <Portfolio />
