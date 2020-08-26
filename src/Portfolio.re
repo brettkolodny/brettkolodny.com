@@ -9,7 +9,7 @@ let memoryImage = Utility.loadImage("../assets/memory.jpg");
 let make = () => {
     let incantationCatastrophe: Project.details = {
         imgPath: incantationImage,
-        title: "Incantation Catastrophe",
+        title: "Incantation",
         desc: "A top-down retro style game written in Rust where players have to survive as long as possible against waves of enemies",
         link: "https://github.com/brettkolodny/incantation-catastrophe"
     };
