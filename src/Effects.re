@@ -43,6 +43,8 @@ let hideHome = element => {
 
     let homeStyle = getStyle(homeDiv);
 
+    let downStyle = getElementById("down", document) -> getStyle;
+
     let currentDisplay = Webapi.Dom.CssStyleDeclaration.getPropertyValue("display", homeStyle);
     let currentZIndex = Webapi.Dom.CssStyleDeclaration.getPropertyValue("z-index", homeStyle);
 
@@ -54,5 +56,6 @@ let hideHome = element => {
 
     if (display != currentDisplay) {
         Webapi.Dom.CssStyleDeclaration.setProperty("display", display, "", homeStyle);
+        Webapi.Dom.CssStyleDeclaration.setProperty("display", display, "", downStyle);
     };
 };
