@@ -37,7 +37,7 @@ let make = () => {
 
     let pubSub: Project.details = {
         imgPath: pubsubImage,
-        title: "Distrbuted Pub-Sub",
+        title: "Distributed Pub-Sub",
         desc: "Distributed publisher-subscriber system where users can subscribe to topics or specific publishers and be notified when a message is posted",
         link: "https://github.com/brettkolodny/Simple-Publisher-Subscriber-System"
     };
