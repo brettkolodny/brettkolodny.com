@@ -5,7 +5,7 @@
 let makeStars = (numStars, element) => {
     Random.self_init();
 
-    let starColors = [|"#f6a614", "#fefde2", "#e85581"|];
+    let starColors = [|"rgba(246, 166, 20, 0.5)", "rgba(254, 253, 226, 0.5)", "rgba(232, 85, 129, 0.5)"|];
 
     let blurAmonut = 
     switch (Webapi.Dom.Document.getElementsByTagName("html", document) |> Webapi.Dom.HtmlCollection.item(0)) {
@@ -54,8 +54,6 @@ let makeStars = (numStars, element) => {
         Webapi.Dom.CssStyleDeclaration.setProperty("animation", animation, "", style);
 
         Webapi.Dom.CssStyleDeclaration.setProperty("background-color", color, "", style);
-
-        Webapi.Dom.CssStyleDeclaration.setProperty("opacity", "50%", "", style);
 
         Webapi.Dom.Element.appendChild(star, element);
     };

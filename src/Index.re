@@ -27,9 +27,7 @@ ReactDOMRe.render(
             <img src=downSvg alt="Down" />
           </div>
       </div>
-      //<div id="portfolio-seperator"></div>
       <Portfolio />
-      //<div id="about-seperator"></div>
       <About />
   </div>
   ,root

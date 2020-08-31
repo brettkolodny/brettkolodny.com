@@ -55,6 +55,8 @@ body {
     width: 100%;
     z-index: 1;
     backface-visibility: hidden;
+    top: 0px;
+    left: 0px;
 }
 
 #home > .link-button {
@@ -97,6 +99,8 @@ body {
     flex-flow: row;
     justify-content: center;
     z-index: -1;
+    top: 0px;
+    left: 0px;
 }
 
 #down > img {
