@@ -8,19 +8,20 @@ let getBlurAmount = element => {
     min(pos /. maxHeight *. 10.0, 6.0);
 };
 
-let blur = element => {
-    let homeDiv = getElementById("home", document);
-    let stars = getElementById("stars", document);
+let blur = _element => {
+    // let homeDiv = getElementById("home", document);
+    // let stars = getElementById("stars", document);
 
-    let blurAmount = Js.Float.toString(getBlurAmount(element)) ++ "px";
+    // let blurAmount = Js.Float.toString(getBlurAmount(element)) ++ "px";
 
-    let propertyValue = "blur(" ++ blurAmount ++ ")";
+    // let propertyValue = "blur(" ++ blurAmount ++ ")";
 
-    let homeStyle = getStyle(homeDiv);
-    Webapi.Dom.CssStyleDeclaration.setProperty("filter", propertyValue, "", homeStyle);
+    // let homeStyle = getStyle(homeDiv);
+    // Webapi.Dom.CssStyleDeclaration.setProperty("filter", propertyValue, "", homeStyle);
 
-    let starsStyle = getStyle(stars);
-    Webapi.Dom.CssStyleDeclaration.setProperty("--blur", blurAmount, "", starsStyle);
+    // let starsStyle = getStyle(stars);
+    // Webapi.Dom.CssStyleDeclaration.setProperty("--blur", blurAmount, "", starsStyle);
+    ()
 
 };
 

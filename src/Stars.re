@@ -7,14 +7,14 @@ let makeStars = (numStars, element) => {
 
     let starColors = [|"rgba(246, 166, 20, 0.5)", "rgba(254, 253, 226, 0.5)", "rgba(232, 85, 129, 0.5)"|];
 
-    let blurAmonut = 
-    switch (Webapi.Dom.Document.getElementsByTagName("html", document) |> Webapi.Dom.HtmlCollection.item(0)) {
-    | Some(e) => Js.Float.toString(Effects.getBlurAmount(e)) ++ "px"
-    | None => "0px"
-    };
+    // let blurAmonut = 
+    // switch (Webapi.Dom.Document.getElementsByTagName("html", document) |> Webapi.Dom.HtmlCollection.item(0)) {
+    // | Some(e) => Js.Float.toString(Effects.getBlurAmount(e)) ++ "px"
+    // | None => "0px"
+    // };
 
-    let elementStyle = getStyle(element);
-    Webapi.Dom.CssStyleDeclaration.setProperty("--blur", blurAmonut, "", elementStyle);
+    // let elementStyle = getStyle(element);
+    // Webapi.Dom.CssStyleDeclaration.setProperty("--blur", blurAmonut, "", elementStyle);
 
 
     let createStar = () => {
